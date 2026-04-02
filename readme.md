@@ -23,7 +23,7 @@ Automation testing framework untuk aplikasi Android menggunakan Appium, TestNG, 
 ├── reports/               # Hasil report & screenshot
 │   └── screenshots/
 ├── src/
-│   └── main/java/
+│   └── test/java/
 │      └── saucedemo/
 │          ├── core/      # DriverManager, BaseTest, Listener
 │          ├── pages/     # Page Object Model
@@ -62,7 +62,7 @@ adb devices
 ### 3. Run Test
 
 ```
-./gradlew test
+./gradlew clean test
 ```
 
 ---
