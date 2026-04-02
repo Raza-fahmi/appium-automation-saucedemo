@@ -20,6 +20,7 @@ Automation testing framework untuk aplikasi Android menggunakan Appium, TestNG, 
 ```
 ├── apk/                    # File APK aplikasi
 ├── chromedriver/          # Chromedriver untuk webview (jika ada)
+├── docs/                  # berisi jawaban reflection question
 ├── reports/               # Hasil report & screenshot
 │   └── screenshots/
 ├── src/
@@ -123,6 +124,13 @@ Framework ini dirancang dengan prinsip:
 * **Scalability** → mudah ditambah device / test
 * **Maintainability** → menggunakan Page Object Model
 * **Observability** → report + screenshot untuk debugging
+
+---
+
+## 📘 Reflection Answers
+
+Lihat jawaban reflection di:
+[Reflection.md](docs/reflection.md)
 
 ---
 
