@@ -147,7 +147,7 @@ Lihat jawaban reflection di:
 ## 👤 Author
 
 **Reza Fahmi**
-QA Automation Engineer (Aspiring)
+QA Automation Engineer 
 
 ---
 
