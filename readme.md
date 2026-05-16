@@ -1,6 +1,6 @@
 # 📱 Appium Mobile Automation Framework
 
-Automation testing framework untuk aplikasi Android menggunakan Appium, TestNG, dan ExtentReports. Framework ini dirancang untuk scalable testing, mendukung parallel execution (multi-device), serta terintegrasi dengan CI/CD.
+Automation testing framework untuk aplikasi Android menggunakan Appium, TestNG, dan ExtentReports. Framework ini dirancang untuk scalable testing, serta terintegrasi dengan CI/CD.
 
 ---
 
