@@ -1,4 +1,5 @@
-name: Run android test using self hosted runner
+name: Run Android Appium Test
+
 on:
   push:
     branches:
@@ -6,19 +7,52 @@ on:
 
 env:
   JAVA_VERSION: '17'
-  GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.workers.max=2
 
 jobs:
-  test:
+  android-test:
     runs-on: self-hosted
 
     steps:
-      - name: Checkout repo test
+      - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Run test
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: ${{ env.JAVA_VERSION }}
+
+      - name: Verify Java Version
+        run: java -version
+
+      - name: Verify Connected Devices
+        run: adb devices
+
+      - name: Start Appium Server
         run: |
-          chmod +x ./gradlew
-          ./gradlew test
+          appium --base-path /wd/hub > appium.log 2>&1 &
+          sleep 10
+
+      - name: Verify Appium Server
+        run: |
+          curl http://127.0.0.1:4723/wd/hub/status
+
+      - name: Grant Execute Permission
+        run: chmod +x gradlew
+
+      - name: Run Automation Test
+        run: ./gradlew clean test
+
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: extent-report
+          path: reports/
+
+      - name: Upload Appium Logs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: appium-log
+          path: appium.log
