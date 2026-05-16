@@ -40,7 +40,6 @@ Automation testing framework untuk aplikasi Android menggunakan Appium, TestNG, 
 * ✅ Thread-safe Driver (ThreadLocal)
 * ✅ Screenshot otomatis saat test gagal
 * ✅ HTML Report (ExtentReports)
-* ✅ Parallel execution (multi-device)
 * ✅ CI/CD integration (GitHub Actions)
 * ✅ Configurable device capability
 
